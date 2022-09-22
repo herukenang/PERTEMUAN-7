@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<body>
+<>
+<script>
+//created an abstract class (constructor function)
+function Employee()
+{
+    this.empName="";
+
+//if(this.constructor === Employee){
+//throws new error("you cannot create an instance of Abstract class");
+//}
+};
+
+//Created a subclass (constructor function)
+function Manager(fullName)
+{
+this.empName=fullName;
+}
+
+//Method (function) of our abstract class
+Employee.prototype.display=function()
+{
+return "Employee name is: "+this.empName;
+}
+
+//Created an object of subclass (extending abstract class)
+Manager.prototype=Object.create(Employee.prototype);
+var mang=new Mananger("Aniket Davda");
+console.log(mang.display());
+</script>
+</body>
+</html>
